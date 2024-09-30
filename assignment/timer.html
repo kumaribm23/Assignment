@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="timer.css">
+    
+</head>
+<body>
+    <div class="container">
+<img src="images/logo.jpeg"  class="image">
+<div class="content">
+    <h1>We Are<br> Loading Soon</h1>
+</div>
+<div class="clock">
+    <div id="date">
+        <h1>Monday 30 September 2024</h1></div>
+    
+    <ul>
+        <li id="hours">24<br><h6>Hour</h6></li>
+        <li id="point">:</li>
+        <li id="min">30 <br><h6>Min</h6></li>
+        <li id="point">:</li>
+        <li id="sec">30<br><h6>Sec</h6></li>
+    </ul>
+</div>
+
+   <button type="button" class="button">Learn More</button>
+       </div>
+    </div>
+</div>
+</div>
+    <script>
+       function clock(){
+        var monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var dayNames = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
+
+        var today = new Date();
+
+        document.getElementById('date').innerHTML = (dayNames[today.getDay()] + "" +
+          today.getDate() + "" + monthNames[today.getMonth()] + '' +today.getFullYear());
+
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          var day = h<11 ? 'AM' : 'PM';
+
+          h = h<10 ? '0' +h : h;
+          m = m<10 ? '0' +m : m;
+          s = s<10 ? '0' +s : s;
+
+          document.getElementById('hours').innerHTML = h;
+          document.getElementById('min').innerHTML = m;
+          document.getElementById('sec').innerHTML = s;
+    }var inter = setInterval(clock,400)
+    </script>
+</body>
+</html>
